@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Graphical Analyzer</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" type="image/x-icon" href="global-business.jpg" />
+  <link rel="stylesheet" href="bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Helvetica' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet">
+  <script src="jquery.js"></script>
+  <script src="bootstrap.min.js"></script>
+  <script src="https://d3js.org/d3.v4.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+<link rel='stylesheet' href='https://code.getmdl.io/1.1.3/material.brown-deep_purple.min.css' />
+<script src='https://code.getmdl.io/1.1.3/material.min.js'></script>
+<link rel='stylesheet' href='styles1.css'>
+  <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <link href="bootstrap.min.css" rel="stylesheet">
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="flexslider.css" type="text/css">
+    <link href='styles.css' rel="stylesheet">
+    <link href="queries.css" rel="stylesheet">
+    <link href="jquery.fancybox.css" rel="stylesheet">
+  <style>
+video { 
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -100;
+    transform: translateX(-50%) translateY(-50%);
+}
+  </style>
+  
+  </head>
+ <body>
+ <section class="navigation">
+  <div class="container-fluid">
+  <div class="row">
+  <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-8 col-xs-offset-2">
+  <nav class="pull">
+  <ul class="top-nav">
+  <li><a href="#syc">Sector-Year Comparison<span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+  <li><a href="#cyc">Company-Year Comparison <span class="indicator"><i class="fa fa-angle-right"></i></span></a></li>
+    </ul>
+  </nav>
+  </div>
+  </div>
+  </div>
+  </section>
+   <section class="hero" id="hero" style="padding-bottom:20%">
+   <div class="container">
+   <div class="row">
+   <div class="col-md-12 text-right" style="padding-right:5%">
+   <a href="#"><i class="fa fa-navicon fa-2x nav_slide_button"></i></a>
+   </div>
+   </div>
+   <div class="row">
+   <div class="col-md-8 col-md-offset-2 text-center">
+   <h1 class="animated bounceInDown" style="font-size:13vw;margin-top: 0">Graphical Analyzer</h1>
+   <h1 class="animated fadeInUpDelay" style="font-size:300%;margin-top: 0">We'll help you find profit variations.</h1>
+   </div>
+   </div>
+   <div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center">
+            <video id="bgvid" playsinline autoplay muted loop>
+<source src="MyMovie.mp4" type="video/mp4">
+<source src="MyMovie.mp4" type="video/mp4">
+</video>
+            </div>
+          </div>
+<div class="row">
+            <div class="col-md-6 col-md-offset-3 text-center" style="margin-top:16.5vh">
+            </div>
+          </div>
+          </div>
+          </section>
+          <section class="download-now" id="syc" style="background-color:#e8b968;padding-bottom:120px;color:#565656">
+        <div class="container" style="padding:13vh;padding-left:2%;padding-top:0">
+          <div class="row">
+            <div class="col-md-8 wp1" id='Div1'>
+              <h1>
+              Sector-Year Comparison
+              </h1>
+              <p style="font-size:150%;font-family: Lato:400">Compare the profits of various companies in a financial year that belong to a single sector.</p>
+              <div class="container">
+              <div class='mdl-layout__tab-panel is-active' id='registration'>
+              <form action="sector_year.php" id='submitsyc' method='post'>
+    <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+    <select id='sector_year-sector' name='sector_year-sector' class='mdl-textfield__input' required>
+      <option value='' selected='selected' disabled='disabled'>Select Sector</option>
+    <option style='color:#e8b968;background-color:#565656;' name='automobile' value='automobile'>Automobile</option>
+    <option style='color:#e8b968;background-color:#565656;' name='pharmaceutical' value='pharmaceutical'>Pharmaceutical</option>
+    <option style='color:#e8b968;background-color:#565656;' name='sports' value='sports'>Sports</option>
+    <option style='color:#e8b968;background-color:#565656;' name='computers' value='computers'>Computers</option>
+    <option style='color:#e8b968;background-color:#565656;' name='airlines' value='airlines'>Airlines</option>
+  </select>
+
+    </div><br>
+  <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+  <select id='sector_year-year' name='sector_year-year' class='mdl-textfield__input' required>
+  <option value='' selected='selected' disabled='disabled'>Select Year</option>
+  <option style='color:#e8b968;background-color:#565656;' name='one' value='one'>2012</option>
+  <option style='color:#e8b968;background-color:#565656;' name='two' value='two'>2013</option>
+  <option style='color:#e8b968;background-color:#565656;' name='three' value='three'>2014</option>
+  <option style='color:#e8b968;background-color:#565656;' name='four' value='four'>2015</option>
+  <option style='color:#e8b968;background-color:#565656;' name='five' value='five'>2016</option>
+  </select>
+
+    </div><br>
+  <button type='button' onclick="document.getElementById('submitsyc').submit();" class='mdl-button mdl-js-button mdl-button--raised mdl-button--colored'><i class='material-icons'></i>Submit</button>
+<br><br>
+  </form>
+  </div>
+  </div>
+  </div>
+  </div>
+</div>
+              
+  </section>
+
+  <section class="download-next" id="cyc" style="padding-bottom:225px;color:#e8b968">
+         <div class="container" style="padding:13vh;padding-left:2%;padding-top:0">
+          <div class="row">
+            <div class="col-md-8 wp1">
+              <h1>
+              Company-Year Comparison
+              </h1>
+              <p style="font-size:150%;font-family: Lato:400">Compare the profits of single company in previous financial years.</p>
+              <div class="container">
+              <div class='mdl-layout__tab-panel is-active' id='registration'>
+              <form action='company_year.php' method='post'>
+    <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+    <select id='company_year-sector' name='company_year-sector' class='mdl-textfield__input' required>
+      <option value='' selected='selected' disabled='disabled'>Select Sector</option>
+    <option style='background-color:#e8b968;color:#565656;padding:20vw' name='automobile' value='automobile'>Automobile</option>
+    <option style='background-color:#e8b968;color:#565656;padding:20vw' name='pharmaceutical' value='pharmaceutical'>Pharmaceutical</option>
+    <option style='background-color:#e8b968;color:#565656;padding:20vw' name='sports' value='sports'>Sports</option>
+    <option style='background-color:#e8b968;color:#565656;padding:20vw' name='computers' value='computers'>Computers</option>
+    <option style='background-color:#e8b968;color:#565656;padding:20vw' name='airlines' value='airlines'>Airlines</option>
+  </select>
+
+    </div><br>
+  <div class='mdl-textfield mdl-js-textfield mdl-textfield--floating-label'>
+  <select id='company_year-company' name='company_year-company' class='mdl-textfield__input' required>
+  <option style='background-color:#e8b968;color:#565656' value='' selected='selected' disabled='disabled'>Select Company</option>
+  </select>
+
+    </div><br>
+  <button type='submit' class='mdl-button mdl-js-button mdl-button--raised mdl-button--colored'><i class='material-icons'></i>Submit</button>
+<br><br>
+  </form>
+  </div>
+  </div>
+  </div>
+  </div>
+  <script>
+  $(document).ready(function() {
+
+  $('#company_year-sector').change(function() {
+
+    var el = $(this) ;
+
+    if(el.val() === "automobile" ) {
+      $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+$("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' value='' selected='selected' disabled='disabled'>Select Company</option>");
+$("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='porsche' value='porsche'>Porsche</option>");
+  $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='bmw' value='bmw'>BMW</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='bentley' value='bentley'>Bentley</option>");
+  $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name'ferrari' value='ferrari'>Ferrari</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='mercedes' value='mercedes'>Mercedes-Benz</option>");
+    }
+      else if(el.val() === "pharmaceutical") {
+
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' value='' selected='selected' disabled='disabled'>Select Company</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='j&j' name='j&j' value='j&j'>Johnson & Johnson</option>");
+  $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='merck' name='merck' value='merck'>Merck & Co.</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='roche' name='roche' value='roche'>Roche</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='pfizer' name='pfizer' value='pfizer'>Pfizer</option>");
+$("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='novartis' name='novartis' value='novartis'>Novartis</option>");
+         }
+         else if(el.val() === "sports" ) {
+
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' value='' selected='selected' disabled='disabled'>Select Company</option>");
+  $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw;' name='adidas' value='adidas'>Adidas</option>");
+  $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw;' name='asics' value='asics'>Asics</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='yonex' value='yonex'>Yonex</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='nike' value='nike'>Nike</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='puma' value='puma'>Puma</option>");
+         }
+         else if(el.val() === "computers" ) {
+
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' value='' selected='selected' disabled='disabled'>Select Company</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='dell' value='dell'>Dell</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='hp' value='hp'>HP</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='asus' value='asus'>Asus</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='lenovo' value='lenovo'>Lenovo</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='acer' value='acer'>Acer</option>");
+         }
+         else if(el.val() === "airlines" ) {
+
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+        $("#company_year-company option:last-child").remove() ;
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' value='' selected='selected' disabled='disabled'>Select Company</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='american' value='american'>American airlines</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='delta' value='delta'>Delta</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='uch' value='uch'>United Continental Holdings</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='lufthansa' value='lufthansa'>Lufthansa</option>");
+    $("#company_year-company").append("<option style='background-color:#e8b968;color:#565656;padding:20vw' name='airfrance' value='airfrance'>Air France</option>");
+         }
+  });
+
+});
+  </script>
+  </section>
+      <script src="js/jquery.fancybox.pack.js"></script>
+      <!-- Include all compiled plugins (below), or include individual files as needed -->
+      <script src="bootstrap.min.js"></script>
+      <script src="scripts.js?v=1.7"></script>
+      <script src="jquery.flexslider.js"></script>
+      <script src="jquery.smooth-scroll.js"></script>
+      <script src="modernizr.js"></script>
+      <script src="waypoints.min.js"></script>
+ </body>"
